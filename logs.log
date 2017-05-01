@@ -1,0 +1,8 @@
+ * Running on http://127.0.0.1:3002/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 845-867-224
+127.0.0.1 - - [28/Apr/2017 22:35:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Apr/2017 22:54:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Apr/2017 22:55:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Apr/2017 22:56:01] "GET / HTTP/1.1" 200 -
