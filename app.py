@@ -12,7 +12,7 @@ def index():
 @app.route('/process-number-plate', methods=['GET'])
 def processNumberPlate():
     fi = request.args.get('fileName') + ".jpg"
-    fileName = "~/traffic-violation-detector/images/" + fi
+    fileName = "~/traffic-violation-detector-cm/images/" + fi
     print "Processing file: " + fileName
     
     status = Main.main(fileName)
