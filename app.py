@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import request
 import ImageProcessing
+from shutil import copyfile
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,10 +11,14 @@ def index():
 
 @app.route('/process-number-plate', methods=['GET'])
 def processNumberPlate():
-    fileName = "~/traffic-violation-detector/images/" + request.args.get('fileName')
+    fi = request.args.get('fileName') + ".jpg"
+    fileName = "~/traffic-violation-detector/images/" + fi
     print "Processing file: " + fileName
+    
     status = ImageProcessing.main(fileName)
     if(status.startswith("Error")):
+        copyLoc = "~/traffic-violation-detection-fi/app/images/" + fi 
+        copyfile(fileName, copyLoc)
         print "Error"
         return "error"
     else:
