@@ -12,12 +12,12 @@ def index():
 @app.route('/process-number-plate', methods=['GET'])
 def processNumberPlate():
     fi = request.args.get('fileName') + ".jpg"
-    fileName = "~/traffic-violation-detector-cm/images/" + fi
+    fileName = "/home/pi/traffic-violation-detector-cm/" + fi
     print "Processing file: " + fileName
     
     status = Main.main(fileName)
     if(status.startswith("Error")):
-        copyLoc = "~/traffic-violation-detection-fi/app/images/" + fi 
+        copyLoc = "/home/pi/traffic-violation-detection-fi/app/" + fi 
         copyfile(fileName, copyLoc)
         print "Error"
         return "error"
