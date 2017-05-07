@@ -1,7 +1,7 @@
 #!flask/bin/python
 from flask import Flask
 from flask import request
-import ImageProcessing
+import Main
 from shutil import copyfile
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def processNumberPlate():
     fileName = "~/traffic-violation-detector/images/" + fi
     print "Processing file: " + fileName
     
-    status = ImageProcessing.main(fileName)
+    status = Main.main(fileName)
     if(status.startswith("Error")):
         copyLoc = "~/traffic-violation-detection-fi/app/images/" + fi 
         copyfile(fileName, copyLoc)
